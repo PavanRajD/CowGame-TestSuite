@@ -13,7 +13,7 @@ do
     # Take current time in milliseconds via date command
     ts=$(date +%s%N)
     # Run given executable
-    $1 "src/tests/input/test"$i".txt" "src/tests/output/test"$i"-sol.txt"
+    java puzzle3 "src/tests/input/test"$i".txt" "src/tests/output/test"$i"-sol.txt"
     # Output time taken into file
     echo "$((($(date +%s%N) - $ts)/1000000))" >> src/output/times.txt
     # Verify solution correctness
