@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.stream.Collectors;
 
 /**
  * We start with a list of all the grass positions on the farm. We then iterate
@@ -56,7 +57,7 @@ public class BFS implements SearchAlgorithm {
 
             if (sk.getFinalScore() > 0) {
                 var positions = grassPositions.stream().filter((position) -> !position.IsAnyPositionMatched(p))
-                        .toList();
+                        .collect(Collectors.toList());
                 positions.forEach((position) -> {
                     var pos = new ArrayList<Position>();
                     pos.addAll(p);

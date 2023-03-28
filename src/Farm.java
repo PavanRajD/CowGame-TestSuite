@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * It represents a farm with a given size and a list of positions
@@ -27,7 +28,7 @@ public class Farm {
      * @return A list of positions that are of the type of the farm field passed in.
      */
     public List<Position> getFieldPositions(FarmField farmField) {
-        return this.Positions.stream().filter((p) -> p.FarmFieldType == farmField).toList();
+        return this.Positions.stream().filter((p) -> p.FarmFieldType == farmField).collect(Collectors.toList());
     }
 
     /**

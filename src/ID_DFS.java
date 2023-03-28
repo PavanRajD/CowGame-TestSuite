@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 /**
  * This class implements the SearchAlgorithm interface and performs a
@@ -63,12 +64,12 @@ public class ID_DFS implements SearchAlgorithm {
 
                 if (depth == 1 && sk.getFinalScore() == 0) {
                     grassPositions = grassPositions.stream().filter((position) -> !position.IsAnyPositionMatched(p))
-                            .toList();
+                            .collect(Collectors.toList());
                 }
             }
 
             var positions = grassPositions.stream().filter((position) -> !position.IsAnyPositionMatched(p))
-                    .toList();
+                    .collect(Collectors.toList());
             for (int i = positions.size() - 1; i >= 0; i--) {
                 var position = positions.get(i);
                 var pos = new ArrayList<Position>();
