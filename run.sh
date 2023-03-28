@@ -6,6 +6,8 @@ mkdir src/tests/output
 > src/output/times.txt
 > src/output/errors.txt
 
+javac -d . src/*.java
+
 for i in {0..499}
 do
     # Take current time in milliseconds via date command
