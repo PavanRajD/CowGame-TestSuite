@@ -38,7 +38,7 @@ public class ID_DFS implements SearchAlgorithm {
         // Creating a queue of lists of positions.
         Stack<List<Position>> frontier = new Stack<List<Position>>();
 
-        for (int i = grassPositions.size() - 1; i >= 0; i--) {
+        for (int i = 0; i < grassPositions.size(); i++) {
             var position = grassPositions.get(i);
             var pos = new ArrayList<Position>();
             pos.add(position);
@@ -70,7 +70,7 @@ public class ID_DFS implements SearchAlgorithm {
 
             var positions = grassPositions.stream().filter((position) -> !position.IsAnyPositionMatched(p))
                     .collect(Collectors.toList());
-            for (int i = positions.size() - 1; i >= 0; i--) {
+            for (int i = 0; i < positions.size(); i++) {
                 var position = positions.get(i);
                 var pos = new ArrayList<Position>();
                 pos.addAll(p);
